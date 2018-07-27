@@ -48,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #中间件
+    # 'middleware.myapp.mymiddle.MyMiddle',
 ]
 
 ROOT_URLCONF = 'gaojishiyong.urls'
@@ -124,6 +126,10 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+#普通文件
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR,'static/myapp')
 ]
+
+#上传文件目录
+MDEIA_ROOT=os.path.join(BASE_DIR,r'static\upfile')
