@@ -128,7 +128,11 @@ USE_TZ = False
 STATIC_URL = '/static/'
 #普通文件
 STATICFILES_DIRS = [
+<<<<<<< HEAD
     os.path.join(BASE_DIR,'static/myapp')
+=======
+    os.path.join(BASE_DIR,'static/myapp/')
+>>>>>>> 6f0114498dc261334e7a4b6dd34602b6edc8148f
 ]
 
 #上传文件目录
