@@ -20,3 +20,34 @@ def savefile(request):
 
     else:
         return HttpResponse('上传失败')
+
+#分页方法
+from .models import Students
+from django.core.paginator import Paginator
+def studentpage(request,pageid):
+    #所有学生列表
+    alllist = Students.objects.all()
+    pageinator = Paginator(alllist,6)
+    page = pageinator.page(pageid)
+
+    return render(request,'myapp/studentpage.html',{'students':page})
+
+
+def ajaxstudents(request):
+    return render(request,'myapp/ajaxstudents.html')
+
+from django.http import JsonResponse
+def studentsinfo(request):
+    stus = Students.objects.all()
+    list = []
+    for stu in stus:
+        list.append([stu.sname,stu.sage])
+    return JsonResponse({'data':list})
+
+def edit(request):
+    return render(request,'myapp/edit.html')
+
+import time
+def celery(request):
+
+    return render(request,'myapp/celery.html')

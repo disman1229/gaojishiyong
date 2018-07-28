@@ -35,3 +35,6 @@ class Students(models.Model):
     def getName(self):
         return self.sname
 
+from tinymce.models import HTMLField
+class Text(models.Model):
+    str = HTMLField()
